@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+
   font-family: inherit;
   text-decoration: none;
 }
@@ -18,11 +19,21 @@ header {
 }
 
 header img {
-  display: block;
   max-width: 300px;
 }
 
 /*======== Content ========*/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .news,
+.container .services {
+  max-width: 900px;
+  width: 100%;
+}
 
 .container .news h2,
 .container .services h2 {
@@ -32,6 +43,7 @@ header img {
   background: linear-gradient(to bottom, white, #01ca55);
 }
 
+/*======== News ========*/
 .container .news .post {
   margin-top: 5px;
   padding: 10px;
@@ -54,15 +66,88 @@ a.title-post {
 
 .container .news .post .inside-post {
   padding: 5px;
-
-  
 }
 
 .container .news .post .inside-post .img-post{
   height: 150px;
   margin-right: 20px;
+  margin-bottom: 10px;
 
   float: left;
   
   border-radius: 20px;
+}
+
+.container .news .post .category-post {
+  margin-top: 5px;
+  clear: both;
+}
+
+.container .news .post .category-post .category-link {
+  color: white;
+  background-color: #005021bb;
+
+  padding: 2px;
+
+  font-weight: bold;
+  
+  border-radius: 5px;
+}
+
+/*======== Services ========*/
+
+.container .services .services-link { 
+  height: 40px;
+  margin: 5px;
+
+  color: black;
+  font-weight: bold;
+
+  border: rgb(165, 165, 165) solid 2px;
+  border-radius: .25rem;
+  background-color: rgb(233, 232, 232);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*======== Footer ========*/
+footer {
+  width: 100vw;
+  
+  background: grey;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-content{
+  max-width: 900px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.search {
+  width: 400px;
+}
+
+/*======== Responsive ========*/
+@media (max-width: 850px) {
+  footer{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container .services .link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container .services .services-link {
+    width: 90%;
+  }
 }
