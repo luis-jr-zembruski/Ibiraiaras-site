@@ -95,10 +95,17 @@ a.title-post {
 }
 
 /*======== Services ========*/
+.container .services .link-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  align-items: center;  
+}
 
 .container .services .services-link { 
+  width: 90%;
   height: 40px;
-  margin: 5px;
+  margin: 5px 15px;
 
   color: black;
   font-weight: bold;
@@ -126,28 +133,71 @@ footer {
 .footer-content{
   max-width: 900px;
   width: 100%;
+  padding: 10px 0;
+
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 10px;
 }
 
 .search {
-  width: 400px;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
 }
+
+.search-input,
+.search-button {
+  border-radius: 5px;
+  border: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  margin-right: 5px;
+  padding: 5px 10px;
+  height: 20px;
+}
+
+.search-button {
+  height: 30px;
+  padding: 10px;
+}
+
+.data-dev {
+  margin-bottom: 10px;
+}
+
+
 
 /*======== Responsive ========*/
 @media (max-width: 850px) {
-  footer{
-    display: flex;
-    flex-direction: column;
+  .container {
+    width: 90%;
+    margin: 0 5%;
   }
-
   .container .services .link-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    margin: 5px;
   }
 
-  .container .services .services-link {
+  .container .services .services-link,
+  .informations-pref,
+  .search {
+    width: 100%;
+  }
+
+  .footer-content{
+    display: flex;
+    flex-direction: column;
+
     width: 90%;
   }
 }
